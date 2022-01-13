@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: testpo
+  namespace: testns
+  labels:
+    app: testapp
+spec:
+  serviceAccountName: testsa
+  containers:
+  - name: testapp-cont
+    image: progrium/busybox
+    command: ['sh', '-c', 'echo Hello Kubernetes! && opkg-install curl && sleep 3600']
+
